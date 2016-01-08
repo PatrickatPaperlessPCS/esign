@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @document.user_id %>
+</p>
+
+<p>
+  <strong>Signature:</strong>
+  <%= @document.signature %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @document.date %>
+</p>
+
+<p>
+  <strong>Text1:</strong>
+  <%= @document.text1 %>
+</p>
+
+<%= link_to 'Edit', edit_document_path(@document) %> |
+<%= link_to 'Back', documents_path %>
