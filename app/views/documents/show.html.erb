@@ -1,15 +1,15 @@
 <p id="notice"><%= notice %></p>
-
+<%= image_tag 'doc.jpg', :class => 'zindex'%>
 <p>
   <strong>User:</strong>
   <%= @document.user_id %>
 </p>
-
+<div draggable="true">
 <p>
   <strong>Signature:</strong>
   <%= @document.signature %>
 </p>
-
+</div>
 <p>
   <strong>Date:</strong>
   <%= @document.date %>

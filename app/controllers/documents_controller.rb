@@ -11,6 +11,11 @@ class DocumentsController < ApplicationController
   # GET /documents/1
   # GET /documents/1.json
   def show
+    respond_to do |format|
+      format.html
+      format.pdf do
+      end 
+     end  
   end
 
   # GET /documents/new

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160108203422) do
+ActiveRecord::Schema.define(version: 20160109213108) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,6 +24,16 @@ ActiveRecord::Schema.define(version: 20160108203422) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string   "recipient"
+  end
+
+  create_table "templates", force: :cascade do |t|
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+    t.string   "attachment1_file_name"
+    t.string   "attachment1_content_type"
+    t.integer  "attachment1_file_size"
+    t.datetime "attachment1_updated_at"
+    t.integer  "user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -39,6 +49,10 @@ ActiveRecord::Schema.define(version: 20160108203422) do
     t.inet     "last_sign_in_ip"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
+    t.string   "bgdoc_file_name"
+    t.string   "bgdoc_content_type"
+    t.integer  "bgdoc_file_size"
+    t.datetime "bgdoc_updated_at"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
