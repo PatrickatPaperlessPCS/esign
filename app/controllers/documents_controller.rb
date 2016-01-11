@@ -5,7 +5,8 @@ class DocumentsController < ApplicationController
   # GET /documents
   # GET /documents.json
   def index
-    @documents = Document.all
+    @documents = current_user.documents.order("created_at DESC")
+    @templates = Template.all
   end
 
   # GET /documents/1
@@ -25,6 +26,11 @@ class DocumentsController < ApplicationController
   end
   # GET /documents/1/edit
   def edit
+    #if @cms484.phy_sign.present?
+    #redirect_to pages_error_path
+  #else
+    @document = Document.find_by(authentication_token: params[:authentication_token], id: params[:id])
+   # end
   end
 
   # POST /documents
@@ -32,10 +38,11 @@ class DocumentsController < ApplicationController
   def create
     @document = @document = Document.new(document_params)
     @document.user_id = current_user.id
-
+    
     respond_to do |format|
       if @document.save
-        format.html { redirect_to @document, notice: 'Document was successfully created.' }
+        DocumentMailer.email(@document).deliver_later
+        format.html { redirect_to documents_path, notice: 'Document was successfully created.' }
         format.json { render :show, status: :created, location: @document }
       else
         format.html { render :new }
@@ -76,6 +83,6 @@ class DocumentsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def document_params
-      params.require(:document).permit(:user_id, :signature, :date, :text1)
+      params.require(:document).permit(:template_id, :recipient, :user_id, :signature, :date, :text1)
     end
 end
