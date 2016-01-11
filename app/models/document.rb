@@ -2,7 +2,7 @@ class Document < ActiveRecord::Base
 
 belongs_to :user
 
-has_one :template
+belongs_to :template
 
 	before_create :add_token
 		private

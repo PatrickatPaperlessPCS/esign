@@ -1,4 +1,4 @@
 <p id="notice"><%= notice %></p>
-<%= image_tag @template.attachment1.url %>
+<%= image_tag @template.attachment1.url(:image) %>
 <%= link_to 'Edit', edit_template_path(@template) %> |
 <%= link_to 'Back', templates_path %>

@@ -34,6 +34,7 @@ gem 'bootstrap-sass', '~> 3.3.5'
 gem 'will_paginate', '~> 3.0.6'
 gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
 gem "paperclip", "~> 4.3"
+gem "mini_magick"
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

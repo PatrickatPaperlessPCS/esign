@@ -6,7 +6,7 @@ class DocumentsController < ApplicationController
   # GET /documents.json
   def index
     @documents = current_user.documents.order("created_at DESC")
-    @templates = Template.all
+    @available_templates = @current_user.templates
   end
 
   # GET /documents/1
