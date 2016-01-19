@@ -1,0 +1,25 @@
+<%= form_for(@baa) do |f| %>
+  <% if @baa.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@baa.errors.count, "error") %> prohibited this baa from being saved:</h2>
+
+      <ul>
+      <% @baa.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :signature %><br>
+    <%= f.text_field :signature %>
+  </div>
+  <div class="field">
+    <%= f.label :user_id %><br>
+    <%= f.number_field :user_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

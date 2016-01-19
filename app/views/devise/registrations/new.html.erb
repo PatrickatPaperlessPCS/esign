@@ -1,10 +1,17 @@
-<h2>Sign up</h2>
-
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
+<body class="subdued">
+</br>
 
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h3 class="modal-title">Sign Up</h3>
+      </div>
+      <div class="modal-body">
   <div class="field">
-    <%= f.label :email %><br />
+    <strong>Your business e-mail address: </strong><br />
     <%= f.email_field :email, autofocus: true %>
   </div>
 
@@ -17,7 +24,7 @@
   </div>
 
   <div class="field">
-    <%= f.label :password_confirmation %><br />
+    <strong>Confirm your password: </strong><br />
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
   </div>
 
@@ -25,5 +32,11 @@
     <%= f.submit "Sign up" %>
   </div>
 <% end %>
+      </div>
+      <div class="modal-footer center">
+Already have an account? Go back to <%= render "devise/shared/links" %>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</body>
 
-<%= render "devise/shared/links" %>

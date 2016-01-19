@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Signature:</strong>
+  <%= @baa.signature %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @baa.user_id %>
+</p>
+
+<%= link_to 'Edit', edit_baa_path(@baa) %> |
+<%= link_to 'Back', baas_path %>
