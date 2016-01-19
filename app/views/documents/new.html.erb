@@ -13,7 +13,8 @@
   <% end %>
 <div class="field">
     <%= f.label "Template " %><br>
-    <%= f.text_field :template_id %>
+    <%= f.select :template_id, @available_templates,
+ {prompt: 'Select a template'}, {required: true} %>
   </div>
     <div class="field">
     <%= f.label "Recipient" %><br>

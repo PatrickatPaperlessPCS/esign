@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160110222032) do
+ActiveRecord::Schema.define(version: 20160119024106) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -56,6 +56,8 @@ ActiveRecord::Schema.define(version: 20160110222032) do
     t.string   "bgdoc_content_type"
     t.integer  "bgdoc_file_size"
     t.datetime "bgdoc_updated_at"
+    t.boolean  "subscribed"
+    t.string   "plan"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

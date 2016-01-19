@@ -5,8 +5,7 @@ class DocumentsController < ApplicationController
   # GET /documents
   # GET /documents.json
   def index
-    @documents = current_user.documents.order("created_at DESC")
-    @available_templates = @current_user.templates
+    @documents = current_user.documents.order("created_at DESC").paginate(:page => params[:page], :per_page => 15)
   end
 
   # GET /documents/1
@@ -23,6 +22,7 @@ class DocumentsController < ApplicationController
   def new
     @document = Document.new
     @document.user_id = current_user.id
+    @available_templates = @current_user.templates.map{|tmplt| [tmplt.name, tmplt.id]}
   end
   # GET /documents/1/edit
   def edit
