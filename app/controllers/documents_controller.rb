@@ -20,9 +20,13 @@ class DocumentsController < ApplicationController
 
   # GET /documents/new
   def new
-    @document = Document.new
-    @document.user_id = current_user.id
-    @available_templates = @current_user.templates.map{|tmplt| [tmplt.name, tmplt.id]}
+    if current_user.subscribed?
+      @document = Document.new
+      @document.user_id = current_user.id
+      @available_templates = @current_user.templates.map{|tmplt| [tmplt.name, tmplt.id]}
+    else 
+      redirect_to new_charge_path
+    end
   end
   # GET /documents/1/edit
   def edit

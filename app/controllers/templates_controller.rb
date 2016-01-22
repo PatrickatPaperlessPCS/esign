@@ -4,7 +4,7 @@ class TemplatesController < ApplicationController
   # GET /templates
   # GET /templates.json
   def index
-    @templates = Template.all
+    @templates = current_user.templates.order("created_at DESC")
   end
 
   # GET /templates/1
@@ -14,8 +14,13 @@ class TemplatesController < ApplicationController
 
   # GET /templates/new
   def new
+  if current_user.subscribed?
     @template = Template.new
     @template.user_id = current_user.id
+  else
+    redirect_to new_charge_path
+  end
+
   end
 
   # GET /templates/1/edit
