@@ -1,5 +1,6 @@
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
+      <script src="\assets\json2.min.js"></script>
 <body class="subdued">
 </br>
 
@@ -42,7 +43,7 @@
 
 <link href="\assets\jquery.signaturepad.css" rel="stylesheet">
   <!--[if lt IE 9]><script src="\assets\flashcanvas.js"></script><![endif]-->
-<div style="overflow-y: scroll; height:300px; border:1px solid black;">
+<div style="overflow-y: scroll; height:200px; border:1px solid black;">
 <div class="baatext"><font size="1"><small>
 
 <b>Terms of Use<br/>
@@ -103,7 +104,7 @@ Sign with your mouse below to get started!
       <%= f.hidden_field :signature, class: "output" %>
     </div>
   </div>
-    <script src="\assets\json2.min.js"></script>
+
 </div>    
   <div class="actions">
   <input id="gobutton" type="submit" name="commit" value="Complete Registration Process" />

@@ -11,10 +11,21 @@
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= devise_error_messages! %>
-
+  <div class="field">
+    <strong>Name: </strong><br />
+    <%= f.text_field :name %>
+  </div>
+    <div class="field">
+    <strong>Your business telephone: </strong><br />
+    <%= f.text_field :telephone %>
+  </div>
+    <div class="field">
+    <strong>Your company name: </strong><br />
+    <%= f.text_field :company_name %>
+  </div>
   <div class="field">
     <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
+    <%= f.email_field :email %>
   </div>
 
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
@@ -39,7 +50,8 @@
   <div class="actions">
     <%= f.submit "Update" %>
   </div>
-<% end %>
+
+<%= link_to('See Business Associate Agreement and Terms & Conditions', pages_baa_path(format: :pdf)) %>
 
 <h3>Cancel my account</h3>
 
@@ -54,3 +66,4 @@
     </div><!-- /.modal-content -->
   </div><!-- /.modal-dialog -->
 </body>
+<% end %>

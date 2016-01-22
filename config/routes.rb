@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'pages/baa'
+
   resources :baas
 
   resources :templates

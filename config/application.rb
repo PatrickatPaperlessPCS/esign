@@ -22,7 +22,7 @@ module Esign
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
-    config.middleware.use PDFKit::Middleware #, :print_media_type => true
+    config.middleware.use PDFKit::Middleware, :print_media_type => true
     config.action_mailer.delivery_method = :postmark
     config.action_mailer.postmark_settings = { :api_token => "cf2899bd-c7c4-4432-8081-62e6c66ba8ce" }
   end
