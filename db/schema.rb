@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160122014603) do
+ActiveRecord::Schema.define(version: 20160123014030) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -33,6 +33,7 @@ ActiveRecord::Schema.define(version: 20160122014603) do
     t.string   "recipient"
     t.integer  "template_id"
     t.string   "authentication_token"
+    t.string   "text2"
   end
 
   create_table "templates", force: :cascade do |t|

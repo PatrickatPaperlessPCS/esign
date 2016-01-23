@@ -1,5 +1,5 @@
 <%= stylesheet_link_tag 'documents.scss', :media => "all" %>
-<%= image_tag @document.template.attachment1.url(:image), :class => 'zindex', width: '1225', height: '1500', margin: '0px', padding: '0px'%>
+<!--<%= image_tag @document.template.attachment1.url(:image), :class => 'zindex', width: '1225', height: '1500', margin: '0px', padding: '0px'%> -->
 <p>
   <strong>User:</strong>
   <%= @document.user_id %>
@@ -18,6 +18,11 @@
 <p>
   <strong>Text1:</strong>
   <%= @document.text1 %>
+</p>
+
+<p>
+  <strong>Text2:</strong>
+  <%= @document.text2 %>
 </p>
 
 <%= link_to 'Edit', edit_document_path(@document) %> |

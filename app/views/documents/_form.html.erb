@@ -1,4 +1,4 @@
-<%= form_for(@document) do |f| %>
+<%= form_for(@document, html: { multipart: true}) do |f| %>
   <% if @document.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@document.errors.count, "error") %> prohibited this document from being saved:</h2>
@@ -10,24 +10,156 @@
       </ul>
     </div>
   <% end %>
+<script src="\assets\json2.min.js"></script>
+<link href="\assets\jquery.signaturepad.css" rel="stylesheet">
+<!-- <script type="text/javascript">
+    $(window).load(function(){
+        $('#instructionsModal').modal('show');
+    });
+</script> -->
+<div class="center">
+  <nav class="navbar navbar-default">
+    <button class="btn btn-success btn-lg text-center navbutton" type="button" data-toggle="modal" data-target="#signatureModal">Complete and Sign</button>
+  </nav>
+</div>
+<canvas>
 
-  <div class="field">
+</canvas>
+  <div class="transfield">
     <%= f.label :signature %><br>
-    <%= f.text_field :signature %>
+    <%= f.text_field :signature, :class => 'transfield' %>
   </div>
-  <div class="field">
+  <div class="transfield">
     <%= f.label :date %><br>
-    <%= f.date_field :date %>
+    <%= f.date_field :date, :class => 'transfield' %>
   </div>
-  <div class="field">
+  <div class="transfield">
     <%= f.label :text1 %><br>
-    <%= f.text_area :text1 %>
+    <%= f.text_area :text1, :class => 'transfield' %>
   </div>
-  <div class="field">
+  <div class="transfield">
     <%= f.label "Recipient" %><br>
-    <%= f.text_field :recipient %>
+    <%= f.text_field :recipient, :class => 'transfield' %>
   </div>
   <div class="actions">
     <%= f.submit %>
   </div>
+
+
+
+<!--
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>-->
+<script type="text/javascript">
+$(document).ready(function(){
+
+    var counter = 2;
+    
+    $(document).dblclick(function () {
+        
+  if(counter>35){
+            alert("You have exceeded the maximum allowable text fields");
+            return false;
+  }   
+    
+  var newTextBoxDiv = $(document.createElement('div'))
+       .attr("id", 'TextBoxDiv' + counter);
+                
+  newTextBoxDiv.after().html('<input type="textbox" name="text' + counter + 
+        '" id="document[text' + counter + ']" >');
+            
+  newTextBoxDiv.appendTo("#TextBoxesGroup");
+
+        
+  counter++;
+     });
+
+     $("#removeButton").click(function () {
+  if(counter==1){
+          alert("No more textbox to remove");
+          return false;
+       }   
+        
+  counter--;
+      
+        $("#TextBoxDiv" + counter).remove();
+      
+     });
+    
+     $("#getButtonValue").click(function () {
+    
+  var msg = '';
+  for(i=1; i<counter; i++){
+      msg += "\n Textbox #" + i + " : " + $('#textbox' + i).val();
+  }
+        alert(msg);
+     });
+  });
+</script>
+</head><body>
+
+<div id='TextBoxesGroup'>
+  <div id="TextBoxDiv1">
+    <input type='textbox' id='text1' name="document[text1]" >
+  </div>
+</div>
+<input type='button' value='Remove Button' id='removeButton'>
+<input type='button' value='Get TextBox Value' id='getButtonValue'>
+
+class='transfield'
+
+
+
+<!--Signature Modal 
+<div class="modal fade sigmodal" id="signatureModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Sign below to complete</h4>
+      </div>
+      <div class="modal-body">
+        <form method="post" action="" class="sigPad">
+
+    <div class="sigPad">
+    <div class="sig sigWrappersignup">
+       <canvas class="signuppad" width="498" height="73" ></canvas>
+      <%= f.hidden_field :signature, class: "output" %>
+    </div>
+  </div>
+
+</div>  
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+ 
+        <input type="submit" class="btn btn-primary" name="commit" value="Sign and Complete" />
+      </div>
+    </div>
+  </div>
+</div>
+
+
+Instructions Modal
+<div class="modal fade in" id="signatureModal" tabindex="-1"  aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Sign below to complete</h4>
+      </div>
+      <div class="modal-body">
+        
+        XX
+
+ 
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="signatureModal">Close</button>
+        </div>
+    </div>
+  </div>
+</div>
+ -->
+
 <% end %>

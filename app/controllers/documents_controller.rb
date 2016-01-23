@@ -33,7 +33,7 @@ class DocumentsController < ApplicationController
     #if @cms484.phy_sign.present?
     #redirect_to pages_error_path
   #else
-    @document = Document.find_by(authentication_token: params[:authentication_token], id: params[:id])
+    #@document = Document.find_by(authentication_token: params[:authentication_token], id: params[:id])
    # end
   end
 
@@ -87,6 +87,6 @@ class DocumentsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def document_params
-      params.require(:document).permit(:template_id, :recipient, :user_id, :signature, :date, :text1)
+      params.require(:document).permit(:template_id, :recipient, :text2, :user_id, :signature, :date, :text1)
     end
 end
