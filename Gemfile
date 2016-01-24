@@ -35,6 +35,7 @@ gem 'will_paginate', '~> 3.0.6'
 gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
 gem "paperclip", "~> 4.3"
 gem "mini_magick"
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
@@ -47,7 +48,9 @@ gem "mini_magick"
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
-
+  gem 'quiet_assets'
+  gem 'awesome_print'
+  gem 'pry'
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
 

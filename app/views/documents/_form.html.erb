@@ -23,9 +23,18 @@
     <button class="btn btn-success btn-lg text-center navbutton" type="button" data-toggle="modal" data-target="#signatureModal">Complete and Sign</button>
   </nav>
 </div>
-<canvas>
 
-</canvas>
+
+<div id="textfields">
+
+  
+<% @document.dynamic_textfields.each do |dt| %>
+  <div style='position: absolute; left: <%= dt.left %>px; top: <%= dt.top %>px' >
+    <input type='text' readonly value='<%= dt.text %>' />
+  </div>
+<% end %>
+
+<%= image_tag @document.template.attachment1.url(:image), :class => 'zindex', width: '1225', height: '1500', margin: '0px', padding: '0px'%>
   <div class="transfield">
     <%= f.label :signature %><br>
     <%= f.text_field :signature, :class => 'transfield' %>
@@ -45,105 +54,11 @@
   <div class="actions">
     <%= f.submit %>
   </div>
-<script type="text/javascript">
-jQuery(document).ready(function () {
-  document.createElementsOnClick = true;
 
-  jQuery(document).click(function (e) {
-    if(!document.createElementsOnClick) return;
-
-    var cursorX = e.pageX;
-    var cursorY = e.pageY;
-
-    var textBoxFocusHandler = function(e) {
-      document.createElementsOnClick = false;
-    };
-
-    var textBoxBlurHandler = function(e) {
-      document.createElementsOnClick = true;
-    };
-
-    jQuery("<input type='text' />").css({
-      position: 'absolute',
-      width: '50px',
-      background: 'transparent',
-      top: cursorY + 'px',
-      left: cursorX + 'px'
-    }).
-    on('focus', textBoxFocusHandler).
-    on('blur', textBoxBlurHandler).
-    appendTo(document.body);
-  });
-});
-</script>
 </span><br>
-<!--
-
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>-->
-
-<!--
-<script type="text/javascript">
-$(document).ready(function(){
-
-    var counter = 2;
-    
-    $(document).dblclick(function () {
-        
-  if(counter>35){
-            alert("You have exceeded the maximum allowable text fields");
-            return false;
-  }   
-    
-  var newTextBoxDiv = $(document.createElement('div'))
-       .attr("id", 'TextBoxDiv' + counter);
-  
-
-  newTextBoxDiv.after().html('<input type="textbox" name="text' + counter + 
-        '" id="document[text' + counter + ']" >');
-            
-  newTextBoxDiv.appendTo("#TextBoxesGroup");
-
-        
-  counter++;
-     });
-
-     $("#removeButton").click(function () {
-  if(counter==1){
-          alert("No more textbox to remove");
-          return false;
-       }   
-        
-  counter--;
-      
-        $("#TextBoxDiv" + counter).remove();
-      
-     });
-    
-     $("#getButtonValue").click(function () {
-    
-  var msg = '';
-  for(i=1; i<counter; i++){
-      msg += "\n Textbox #" + i + " : " + $('#textbox' + i).val();
-  }
-        alert(msg);
-     });
-  });
-</script>
-</head><body>
-
-<div id='TextBoxesGroup'>
-  <div id="TextBoxDiv1">
-    <input type='textbox' id='text1' name="document[text1]" >
-  </div>
-</div>
-<input type='button' value='Remove Button' id='removeButton'>
-<input type='button' value='Get TextBox Value' id='getButtonValue'>
-
-class='transfield'
--->
 
 
-<!--Signature Modal 
+Signature Modal 
 <div class="modal fade sigmodal" id="signatureModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -160,7 +75,6 @@ class='transfield'
       <%= f.hidden_field :signature, class: "output" %>
     </div>
   </div>
-
 </div>  
       </div>
       <div class="modal-footer">
@@ -172,7 +86,7 @@ class='transfield'
   </div>
 </div>
 
-
+<!--
 Instructions Modal
 <div class="modal fade in" id="signatureModal" tabindex="-1"  aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">
@@ -193,6 +107,6 @@ Instructions Modal
     </div>
   </div>
 </div>
- -->
-
+-->
+</div> <!-- image div -->
 <% end %>

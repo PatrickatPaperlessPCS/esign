@@ -24,6 +24,12 @@
   <strong>Text2:</strong>
   <%= @document.text2 %>
 </p>
+<% @document.dynamic_textfields.each do |dt| %>
+  <div style='position: absolute; left: <%= dt.left %>px; top: <%= dt.top %>px' >
+    <input class='rendered-dynamic-textfield' type='text' readonly value='<%= dt.text %>' />
+  </div>
 
+
+ <% end %> 
 <%= link_to 'Edit', edit_document_path(@document) %> |
 <%= link_to 'Back', documents_path %>

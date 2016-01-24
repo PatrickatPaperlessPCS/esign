@@ -1,7 +1,8 @@
 class Document < ActiveRecord::Base
 
 belongs_to :user
-
+has_many :dynamic_textfields
+accepts_nested_attributes_for :dynamic_textfields
 belongs_to :template
 
 	before_create :add_token

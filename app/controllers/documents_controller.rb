@@ -60,7 +60,7 @@ class DocumentsController < ApplicationController
   def update
     respond_to do |format|
       if @document.update(document_params)
-        format.html { redirect_to @document, notice: 'Document was successfully updated.' }
+        format.html { redirect_to edit_document_path(@document), notice: 'Document was successfully updated.' }
         format.json { render :show, status: :ok, location: @document }
       else
         format.html { render :edit }
@@ -87,6 +87,6 @@ class DocumentsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def document_params
-      params.require(:document).permit(:template_id, :recipient, :text2, :user_id, :signature, :date, :text1)
+      params.require(:document).permit(:template_id, :recipient, :user_id, :signature, :dynamic_textfields_attributes => [:text, :left, :top])
     end
 end
