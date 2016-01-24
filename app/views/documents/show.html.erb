@@ -1,35 +1,10 @@
 <%= stylesheet_link_tag 'documents.scss', :media => "all" %>
-<!--<%= image_tag @document.template.attachment1.url(:image), :class => 'zindex', width: '1225', height: '1500', margin: '0px', padding: '0px'%> -->
-<p>
-  <strong>User:</strong>
-  <%= @document.user_id %>
-</p>
-<div draggable="true">
-<p>
-  <strong>Signature:</strong>
-  <%= @document.signature %>
-</p>
-</div>
-<p>
-  <strong>Date:</strong>
-  <%= @document.date %>
-</p>
+<%= image_tag @document.template.attachment1.url(:image), :class => 'zindex', width: '1225', height: '1500', margin: '0px', padding: '0px'%>
 
-<p>
-  <strong>Text1:</strong>
-  <%= @document.text1 %>
-</p>
-
-<p>
-  <strong>Text2:</strong>
-  <%= @document.text2 %>
-</p>
 <% @document.dynamic_textfields.each do |dt| %>
   <div style='position: absolute; left: <%= dt.left %>px; top: <%= dt.top %>px' >
-    <input class='rendered-dynamic-textfield' type='text' readonly value='<%= dt.text %>' />
+    <input class='rendered-dynamic-textfield' readonly value='<%= dt.text %>' />
   </div>
 
 
  <% end %> 
-<%= link_to 'Edit', edit_document_path(@document) %> |
-<%= link_to 'Back', documents_path %>

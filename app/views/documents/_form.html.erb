@@ -17,7 +17,7 @@
         $('#instructionsModal').modal('show');
     });
 </script> -->
-<span style="cursor:text">
+<span style="cursor:text"><!-- clickable span -->
 <div class="center">
   <nav class="navbar navbar-default">
     <button class="btn btn-success btn-lg text-center navbutton" type="button" data-toggle="modal" data-target="#signatureModal">Complete and Sign</button>
@@ -27,38 +27,14 @@
 
 <div id="textfields">
 
-  
-<% @document.dynamic_textfields.each do |dt| %>
-  <div style='position: absolute; left: <%= dt.left %>px; top: <%= dt.top %>px' >
-    <input type='text' readonly value='<%= dt.text %>' />
-  </div>
-<% end %>
 
 <%= image_tag @document.template.attachment1.url(:image), :class => 'zindex', width: '1225', height: '1500', margin: '0px', padding: '0px'%>
-  <div class="transfield">
-    <%= f.label :signature %><br>
-    <%= f.text_field :signature, :class => 'transfield' %>
-  </div>
-  <div class="transfield">
-    <%= f.label :date %><br>
-    <%= f.date_field :date, :class => 'transfield' %>
-  </div>
-  <div class="transfield">
-    <%= f.label :text1 %><br>
-    <%= f.text_area :text1, :class => 'transfield' %>
-  </div>
-  <div class="transfield">
-    <%= f.label "Recipient" %><br>
-    <%= f.text_field :recipient, :class => 'transfield' %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+
 
 </span><br>
 
 
-Signature Modal 
+<!--Signature Modal -->
 <div class="modal fade sigmodal" id="signatureModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">
     <div class="modal-content">

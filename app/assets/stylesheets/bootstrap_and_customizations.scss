@@ -34,4 +34,16 @@ baatext {
 
 .rendered-dynamic-textfield {
 	background: transparent;
+	border: 0;
 } 
+
+.dynamic-textbox-button {
+	background-color: red;
+	border-style: outset;
+	border-left-width: 1px;
+	border-top-left-radius: 5px 5px;
+	border-top-right-radius: 5px 5px;
+	color: white;
+	text-transform: bold;
+}
+

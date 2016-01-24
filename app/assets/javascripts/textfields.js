@@ -18,13 +18,13 @@ jQuery(document).ready(function () {
     
     var div = jQuery('<div></div>').addClass('dynamic-textbox').css({
       position: 'absolute',
-      width: '50px',
+      width: '150px',
       background: 'transparent',
       top: cursorY + 'px',
-      left: cursorX + 'px'
+      left: cursorX + 'px',
     });
 
-    var button = jQuery("<input type=button value='X' />").
+    var button = jQuery("<input type=button value='X' />").addClass('dynamic-textbox-button').
     on('click', function(e) {
       $(this).parent().remove();
     }).appendTo(div);
