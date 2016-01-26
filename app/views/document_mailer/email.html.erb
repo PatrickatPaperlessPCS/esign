@@ -1,8 +1,9 @@
 <h2> Critical Documentation Needed: </h2>
-<p> In order to quickly process your referral for patient:  we need additional documentation.
+<p> <%= @document.user.name %> at <%= @document.user.company_name %> has sent you a document for completion.
 <br>
 For your convience, please follow this link to electronically complete the documentation process: </p>
 <br>
 <h4> <%= link_to 'Click Here to complete the necessary documents', edit_document_url(:id => @document.id, :authentication_token => @document.authentication_token) %> </h4>
 <br>
 <p>* this link is forwardable, but can only be used once, and expires after 72 hours <p>
+

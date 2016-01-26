@@ -42,12 +42,13 @@ class DocumentsController < ApplicationController
   def create
     @document = @document = Document.new(document_params)
     @document.user_id = current_user.id
-    
+  
     respond_to do |format|
       if @document.save
         DocumentMailer.email(@document).deliver_later
         format.html { redirect_to documents_path, notice: 'Document was successfully created.' }
         format.json { render :show, status: :created, location: @document }
+        DocumentMailer.reminder(@document).deliver_later
       else
         format.html { render :new }
         format.json { render json: @document.errors, status: :unprocessable_entity }
@@ -60,6 +61,7 @@ class DocumentsController < ApplicationController
   def update
     respond_to do |format|
       if @document.update(document_params)
+        DocumentMailer.update(@document).deliver_later
         format.html { redirect_to @document, notice: 'Document was successfully updated.' }
         format.json { render :show, status: :ok, location: @document }
       else
