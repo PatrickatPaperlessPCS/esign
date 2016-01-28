@@ -5,4 +5,12 @@ class Template < ActiveRecord::Base
   validates_attachment_content_type :attachment1, content_type: [/image/, "application/pdf"]
 
 belongs_to :user
+
+  validate :template_count_within_limit, :on => :new
+
+  def template_count_within_limit
+    if self.user.templates(:reload).count >= 5
+      errors.add(:base, "Exceeded template limit contact us at support@esignhealth.com to upgrade")
+    end
+  end
 end

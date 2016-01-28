@@ -23,6 +23,11 @@ body{
 }
 
 @media print{
+
+  body{
+    width: 100%;
+  }
+  
   .zindex{
     position: absolute;
     left: 0px;

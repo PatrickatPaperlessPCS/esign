@@ -20,13 +20,14 @@ jQuery(document).ready(function () {
       position: 'absolute',
       width: '150px',
       background: 'transparent',
-      top: cursorY + 'px',
+      top: cursorY - 32 + 'px',
       left: cursorX + 'px',
     });
 
     var button = jQuery("<input type=button value='X' />").addClass('dynamic-textbox-button').
     on('click', function(e) {
       $(this).parent().remove();
+      e.stopPropagation();
     }).appendTo(div);
 
     var textbox = jQuery("<input type='text' name='document[dynamic_textfields_attributes][][text]' />").
