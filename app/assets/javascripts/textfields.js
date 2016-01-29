@@ -15,13 +15,17 @@ jQuery(document).ready(function () {
     var textBoxBlurHandler = function(e) {
       document.createElementsOnClick = true;
     };
-    
+
     var div = jQuery('<div></div>').addClass('dynamic-textbox').css({
       position: 'absolute',
-      width: '150px',
       background: 'transparent',
+<<<<<<< HEAD
       top: cursorY - 32 + 'px',
       left: cursorX + 'px',
+=======
+      top: cursorY - 10 + 'px',
+      left: cursorX - 20 + 'px',
+>>>>>>> a43ec37a1e7bb3a90c8e15f963a25249211c3e29
     });
 
     var button = jQuery("<input type=button value='X' />").addClass('dynamic-textbox-button').
@@ -34,11 +38,12 @@ jQuery(document).ready(function () {
       on('focus', textBoxFocusHandler).
       on('blur', textBoxBlurHandler).
       appendTo(div);
-    
+
     var positionX = jQuery("<input type=hidden name='document[dynamic_textfields_attributes][][left]' />").val(cursorX).appendTo(div);
     var positionY = jQuery("<input type=hidden name='document[dynamic_textfields_attributes][][top]' />").val(cursorY).appendTo(div);
-      
+
     div.appendTo(this);
+    textbox.focus();
   });
 });
 
