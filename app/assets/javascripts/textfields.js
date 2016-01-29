@@ -19,13 +19,8 @@ jQuery(document).ready(function () {
     var div = jQuery('<div></div>').addClass('dynamic-textbox').css({
       position: 'absolute',
       background: 'transparent',
-<<<<<<< HEAD
-      top: cursorY - 32 + 'px',
-      left: cursorX + 'px',
-=======
       top: cursorY - 10 + 'px',
       left: cursorX - 20 + 'px',
->>>>>>> a43ec37a1e7bb3a90c8e15f963a25249211c3e29
     });
 
     var button = jQuery("<input type=button value='X' />").addClass('dynamic-textbox-button').
