@@ -14,11 +14,7 @@ class DocumentsController < ApplicationController
     respond_to do |format|
       format.html
       format.pdf do
-        render pdf:                            'file_name',
-        page_size:                      'A4',
-        page_height:                    '100%',
-        page_width:                     '100%'
-      end 
+      end
      end  
   end
 
