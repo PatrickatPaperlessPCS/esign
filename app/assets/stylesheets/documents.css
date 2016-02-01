@@ -3,6 +3,8 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .zindex{
+    page-break-before: auto;  
+    page-break-inside: avoid;
     position: absolute;
     left: 0px;
     top: 0px;
@@ -15,7 +17,9 @@ body{
     padding: 0px;
     padding-left: 0px;
     border: none;
+    page-break-after: always;
   }
+
 #area{
   width: 100%;
   height: 100%;
@@ -26,12 +30,18 @@ body{
 
   body{
     width: 100%;
+    height: 100%;
   }
-  
+
   .zindex{
     position: absolute;
     left: 0px;
     top: 0px;
     z-index: -1;
 }
+
+img.auto-page-break { 
+    page-break-before: auto;  
+    page-break-inside: avoid;
+ }
 }

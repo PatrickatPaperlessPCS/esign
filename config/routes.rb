@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
+  get 'pages/thankyou'
   get 'pages/baa'
-
   resources :baas
 
   resources :templates

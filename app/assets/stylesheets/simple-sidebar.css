@@ -49,6 +49,9 @@
 }
 
 /* Sidebar Styles */
+.sidebar-img {
+    padding-top: 10px;
+}
 
 .sidebar-nav {
     position: absolute;

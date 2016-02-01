@@ -1,5 +1,5 @@
-<%= stylesheet_link_tag 'documents.scss', :media => "all" %>
-<%= image_tag @document.template.attachment1.url(:image), :class => 'zindex', width: '100%', margin: '0px', padding: '0px'%>
+<body>
+<%= image_tag @document.template.attachment1.url(:image), :class => 'zindex', width: '1225', height: '1500', margin: '0px', padding: '0px'%>
 
 <% @document.dynamic_textfields.each do |dt| %>
   <div style='position: absolute; left: <%= dt.left %>px; top: <%= dt.top %>px' >
@@ -8,3 +8,4 @@
 
 
  <% end %> 
+</body>

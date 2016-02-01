@@ -14,6 +14,10 @@ class DocumentsController < ApplicationController
     respond_to do |format|
       format.html
       format.pdf do
+        render pdf:                            'file_name',
+        page_size:                      'A4',
+        page_height:                    '100%',
+        page_width:                     '100%'
       end 
      end  
   end
@@ -62,7 +66,7 @@ class DocumentsController < ApplicationController
     respond_to do |format|
       if @document.update(document_params)
         DocumentMailer.update(@document).deliver_later
-        format.html { redirect_to @document, notice: 'Document was successfully updated.' }
+        format.html { redirect_to pages_thankyou_path, notice: 'Document was successfully updated.' }
         format.json { render :show, status: :ok, location: @document }
       else
         format.html { render :edit }
