@@ -52,3 +52,11 @@ margin-top: 5px;
 	text-transform: bold;
 }
 
+.zindex{
+    page-break-before: auto;  
+    page-break-inside: avoid;
+    z-index: -1;
+    min-height: 1650px;
+    min-width: 1225px;
+    padding: 0px;
+}
