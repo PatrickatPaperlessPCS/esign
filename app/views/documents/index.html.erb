@@ -19,6 +19,7 @@
       <tr>
         <td><%= document.created_at.strftime("%b %d %Y at %I:%M %p") %></td>
         <td><%= document.recipient %></td>
+
         <td><%= image_tag('checkmark.png') if document.signature? %></td>
         <td><%= link_to 'Show', document %></td>
         <td><%= link_to 'Open PDF',  document_path(document, :format => "pdf") %></td>

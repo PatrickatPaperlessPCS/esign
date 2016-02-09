@@ -10,15 +10,12 @@
       </ul>
     </div>
   <% end %>
-<div class="fields">
-  Give your template a name
-  <%= f.text_field :name %>
+
+<div id='template_edit'>
+  <%= image_tag @template.attachment1.url(:image), :class => 'zindex', width: '1225', height: '1500', margin: '0px', padding: '0px'%>
+
 </div>
 
-<div class="fields">
-  Upload your template
-  <%= f.file_field :attachment1 %>
-</div>
 <br>
   <div class="actions">
     <%= f.submit %>

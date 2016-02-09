@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160126045128) do
+ActiveRecord::Schema.define(version: 20160209180343) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -35,6 +35,7 @@ ActiveRecord::Schema.define(version: 20160126045128) do
     t.string   "authentication_token"
     t.string   "text2"
     t.boolean  "reminder"
+    t.string   "template_name"
   end
 
   create_table "dynamic_textfields", force: :cascade do |t|
@@ -44,6 +45,14 @@ ActiveRecord::Schema.define(version: 20160126045128) do
     t.integer  "left"
     t.integer  "top"
     t.integer  "document_id"
+  end
+
+  create_table "signature_positions", force: :cascade do |t|
+    t.integer  "left"
+    t.integer  "top"
+    t.integer  "template_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "templates", force: :cascade do |t|

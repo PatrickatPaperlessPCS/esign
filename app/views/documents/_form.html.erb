@@ -11,6 +11,7 @@
       </ul>
     </div>
   <% end %>
+
 <script src="\assets\json2.min.js"></script>
 <link href="\assets\jquery.signaturepad.css" rel="stylesheet">
 <!-- <script type="text/javascript">
@@ -18,21 +19,21 @@
         $('#instructionsModal').modal('show');
     });
 </script> -->
-<span style="cursor:text"><!-- clickable span -->
 <div class="center">
   <nav class="navbar navbar-default">
     <button class="btn btn-success btn-lg text-center navbutton" type="button" data-toggle="modal" data-target="#signatureModal">Complete and Sign</button>
   </nav>
 </div>
+<div id="textfields" style="cursor:text">
 
 
-<div id="textfields">
+
 
 
 <%= image_tag @document.template.attachment1.url(:image), :class => 'zindex', width: '1225', height: '1500', margin: '0px', padding: '0px'%>
 
 
-</span><br>
+<br>
 
 
 <!--Signature Modal -->

@@ -42,7 +42,7 @@ class DocumentsController < ApplicationController
   def create
     @document = @document = Document.new(document_params)
     @document.user_id = current_user.id
-  
+    #@document.template_name = @template.name --- Save template name
     respond_to do |format|
       if @document.save
         DocumentMailer.email(@document).deliver_later
