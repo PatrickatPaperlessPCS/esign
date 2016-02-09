@@ -866,9 +866,9 @@ $.fn.signaturePad.defaults = {
   , penWidth : 2 // Thickness of the pen
   , penCap : 'round' // Determines how the end points of each line are drawn (values: 'butt', 'round', 'square')
   , lineColour : '#00000' // Colour of the signature line
-  , lineWidth : 2 // Thickness of the signature line
+  , lineWidth : 5 // Thickness of the signature line
   , lineMargin : 5 // Margin on right and left of signature line
-  , lineTop : 90 // Distance to draw the line from the top
+  , lineTop : 190 // Distance to draw the line from the top
   , name : '.name' // The input field for typing a name
   , typed : '.typed' // The Html element to accept the printed name
   , clear : '.clearButton' // Button for clearing the canvas

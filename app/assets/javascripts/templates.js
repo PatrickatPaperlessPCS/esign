@@ -11,6 +11,7 @@ jQuery(document).ready(function () {
     var div = jQuery('<div></div>').css({
       position: 'absolute',
       background: 'lightgreen',
+      opacity: '0.6',
       top: cursorY - 10 + 'px',
       left: cursorX - 20 + 'px',
       width: '540px',

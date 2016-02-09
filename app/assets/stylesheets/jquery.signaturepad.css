@@ -202,7 +202,7 @@
 }
 .sigWrappersignup {
   clear: both;
-  height: 75px;
+  height: 100px;
   border: 1px solid #ccc;
 }
 
@@ -231,11 +231,7 @@ p.error {
 .sigWrappershow {
   position: relative;
   clear: both;
-  height: 15px;
   z-index: -1;
-  left: 150px;
-  bottom: 40px;
-  width: 50px;
 }
 
 .padShow {
@@ -254,10 +250,6 @@ p.error {
   .sigWrappershow {
   position: relative;
   clear: both;
-  height: 15px;
-  left: 150px;
-  bottom: 40px;
-  width: 50px;
 }
 
 .padShow {

@@ -13,11 +13,11 @@
 
   <tbody>
     <% @templates.each do |template| %>
-      <tr>
+      <tr class="<%= template.signature_position ? 'success' : 'danger' %>">
         <td><%= template.name %></td>
-        <td><%= link_to 'Show', template %></td>
-        <td><%= link_to 'Edit', edit_template_path(template) %></td>
-        <td><%= link_to 'Destroy', template, method: :delete, data: { confirm: "Are you sure?  Any documents you've created using this template will no longer be available" } %></td>
+        <td><%= link_to 'View', template %></td>
+        <td><%= link_to 'Set Signature Position', edit_template_path(template) %></td>
+        <td><%= link_to 'Delete Template', template, method: :delete, data: { confirm: "Are you sure?  Any documents you've created using this template will no longer be available" } %></td>
       </tr>
     <% end %>
   </tbody>
