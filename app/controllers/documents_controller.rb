@@ -26,8 +26,7 @@ class DocumentsController < ApplicationController
         @document = Document.new
         @document.user_id = current_user.id
         @available_templates = @current_user.templates.map{|tmplt| [tmplt.name, tmplt.id]}
-      unless current_user.subscribed = 'true'
-      end
+
       end
   end
   # GET /documents/1/edit
