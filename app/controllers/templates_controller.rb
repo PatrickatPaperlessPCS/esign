@@ -14,11 +14,11 @@ class TemplatesController < ApplicationController
 
   # GET /templates/new
   def new
-  if current_user.subscribed?
+  if current_user.created_at <= 5.days.ago && !current_user.subscribed
+    redirect_to new_charge_path
+  else
     @template = Template.new
     @template.user_id = current_user.id
-  else
-    redirect_to new_charge_path
   end
 
   end

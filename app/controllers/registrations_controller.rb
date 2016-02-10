@@ -9,6 +9,8 @@ class RegistrationsController < Devise::RegistrationsController
     params.require(:user).permit(:email, :name, :plan, :subscribed, :company_name, :telephone, :password, :password_confirmation, :signature, :current_password)
   end
 
+
+
  # def after_sign_up_path_for(users)
 #		client = Drip::Client.new(
 #		  access_token: "cjzg7ptfoq2knmsiyzfw",

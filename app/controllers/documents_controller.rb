@@ -20,16 +20,19 @@ class DocumentsController < ApplicationController
 
   # GET /documents/new
   def new
-    if current_user.subscribed?
-      @document = Document.new
-      @document.user_id = current_user.id
-      @available_templates = @current_user.templates.map{|tmplt| [tmplt.name, tmplt.id]}
-    else 
-      redirect_to new_charge_path
-    end
+      if current_user.created_at <= 5.days.ago && !current_user.subscribed
+        redirect_to new_charge_path
+      else
+        @document = Document.new
+        @document.user_id = current_user.id
+        @available_templates = @current_user.templates.map{|tmplt| [tmplt.name, tmplt.id]}
+      unless current_user.subscribed = 'true'
+      end
+      end
   end
   # GET /documents/1/edit
   def edit
+    # TODO: Remove and edit this so that it validates against the token and id
     #if @cms484.phy_sign.present?
     #redirect_to pages_error_path
   #else
@@ -62,7 +65,8 @@ class DocumentsController < ApplicationController
     respond_to do |format|
       if @document.update(document_params)
         DocumentMailer.update(@document).deliver_later
-        format.html { redirect_to pages_thankyou_path, notice: 'Document was successfully updated.' }
+        # TODO: replace root_path with pages_thankyou_path
+        format.html { redirect_to root_path, notice: 'Document was successfully updated.' }
         format.json { render :show, status: :ok, location: @document }
       else
         format.html { render :edit }

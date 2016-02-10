@@ -31,7 +31,7 @@
                     </a>
                 </li>
                 <br>
-                <li>
+                <li class="textwhite"> Hello there, <%= current_user.name %>! </li>                
                 <li><%= link_to (image_tag("home.png", width: '15', height: '15')) + "  My Dashboard", root_path %>
                 </li>
                 <li><%= link_to (image_tag("edit.png", width: '15', height: '15')) + " My Templates", templates_path %></li>
