@@ -76,4 +76,15 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+
+
+  # Sets Paperclip to use Amazon S3
+  config.paperclip_defaults = {
+  :storage => :s3,
+  :s3_credentials => {
+    :bucket => 'esignhealthdocumentimages',
+    :access_key_id => 'AKIAJBNFXAXSATEVSY7Q',
+    :secret_access_key => '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'
+  }
+}
 end

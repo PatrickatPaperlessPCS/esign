@@ -38,4 +38,14 @@ Rails.application.configure do
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
+
+  # Sets Paperclip to use Amazon S3
+  config.paperclip_defaults = {
+  :storage => :s3,
+  :s3_credentials => {
+    :bucket => 'esignhealthdocumentimages',
+    :access_key_id => 'AKIAJBNFXAXSATEVSY7Q',
+    :secret_access_key => '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'
+  }
+}
 end
