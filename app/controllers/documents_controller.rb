@@ -50,7 +50,7 @@ class DocumentsController < ApplicationController
         DocumentMailer.email(@document).deliver_later
         format.html { redirect_to documents_path, notice: 'Document was successfully created.' }
         format.json { render :show, status: :created, location: @document }
-        DocumentMailer.reminder(@document).deliver_later
+        #DocumentMailer.reminder(@document).deliver_later <-- Decided this wasn't a critical function
       else
         format.html { render :new }
         format.json { render json: @document.errors, status: :unprocessable_entity }

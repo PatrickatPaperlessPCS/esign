@@ -21,14 +21,14 @@ class DocumentMailer < ApplicationMailer
 	)
 
 	end
+	# TODO: Later - decided reminder wasn't a critical funtion.  Saved for later date.
+	#def reminder(document)
+	#	@document = document
+	#     mail(
+	#  :subject => "REMINDER: Please Review and Sign" ,
+	#  :to  => @document.recipient ,
+	#  :track_opens => 'true',
+	#)
 
-	def reminder(document)
-		@document = document
-	     mail(
-	  :subject => "REMINDER: Please Review and Sign" ,
-	  :to  => @document.recipient ,
-	  :track_opens => 'true',
-	)
-
-	end
+	#end
 end

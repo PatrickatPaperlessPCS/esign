@@ -1,7 +1,17 @@
 class Template < ActiveRecord::Base
 
 
- has_attached_file :attachment1, styles: { image: ["1125x1500", :png] }, default_url: "/images/missing.png",:convert_options => { density: "1050", quality: "1050" }
+ has_attached_file :attachment1, 
+ default_url: "/images/missing.png",
+ :convert_options => { :image => "-density 1125x1500 -quality 10" },
+ 
+
+ :styles => { 
+ 	image: ["1125x1500", :png] }
+ 
+
+
+
  validates_attachment_content_type :attachment1, content_type: [/image/, "application/pdf"], path: '/templates', url: '/templates'
 
 
