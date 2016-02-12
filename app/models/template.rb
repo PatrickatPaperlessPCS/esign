@@ -23,6 +23,18 @@ belongs_to :user
 has_one :signature_position
 accepts_nested_attributes_for :signature_position
 
+after_create :creation_email
+after_update :update_email
+
+
+
+	def creation_email
+		UserMailer.creation_email(user_id).deliver_later
+	end
+
+	def update_email
+		UserMailer.update_email(user_id).deliver_later
+	end
 
   validate :template_count_within_limit, :on => :create
 

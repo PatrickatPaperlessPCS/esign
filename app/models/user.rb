@@ -10,5 +10,6 @@ class User < ActiveRecord::Base
 
   def send_sign_up_email
 	UserMailer.sign_up(id).deliver_later
+  UserMailer.new_sign_up(id).deliver_later
   end
 end
