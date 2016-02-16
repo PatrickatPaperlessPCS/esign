@@ -40,7 +40,6 @@ margin-top: 5px;
 	background: transparent;
 	border: 0;
 	z-index: 1;
-	position: absolute;
 } 
 
 .dynamic-textbox-button {
@@ -63,4 +62,9 @@ margin-top: 5px;
 }
 .textwhite{
 	color: white;
+}
+
+.nav-float{
+	position: relative;
+	z-index: 1;
 }
