@@ -5,7 +5,7 @@ class UserMailer < ApplicationMailer
 	@user = User.find(id)	
 		mail(
 	  :subject => 'New Sign Up' ,
-	  :to  => 'patrick@paperlesspcs.com' ,
+	  :to  => 'patrick@esignhealth.com' ,
 	  :track_opens => 'true'
 		)
 	end
@@ -13,7 +13,7 @@ class UserMailer < ApplicationMailer
 	def new_sign_up(id)
 	@user = User.find(id)	
 		mail(
-	  :subject => 'New Sign Up' ,
+	  :subject => 'Welcome to eSign Health!' ,
 	  :to  => @user.email ,
 	  :track_opens => 'true'
 		)
@@ -37,7 +37,23 @@ class UserMailer < ApplicationMailer
 		)
 	end
 
+	def deleted(id)
+	@user = User.find(id)	
+		mail(
+	  :subject => 'CANCELLATION' ,
+	  :to  => 'patrick@esignhealth.com' ,
+	  :track_opens => 'true'
+		)
+	end
 
+	def account_deleted(id)
+	@user = User.find(id)	
+		mail(
+	  :subject => "We're sorry to see you go!" ,
+	  :to  => @user.email ,
+	  :track_opens => 'true',
+		)
+	end
 
 end
 

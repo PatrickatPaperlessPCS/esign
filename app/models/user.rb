@@ -12,4 +12,11 @@ class User < ActiveRecord::Base
 	UserMailer.sign_up(id).deliver_later
   UserMailer.new_sign_up(id).deliver_later
   end
+
+  before_destroy :send_delete_email
+
+  def send_delete_email
+    UserMailer.deleted(id).deliver_later
+    UserMailer.account_deleted(id).deliver_later
+  end
 end

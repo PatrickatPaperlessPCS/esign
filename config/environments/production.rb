@@ -83,8 +83,8 @@ Rails.application.configure do
   :storage => :s3,
   :s3_credentials => {
     :bucket => 'esignhealthdocumentimages',
-    :access_key_id => 'AKIAJBNFXAXSATEVSY7Q',
-    :secret_access_key => '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'
+    :access_key_id => 'ENV',
+    :secret_access_key => 'ENV'
   }
 }
 end
