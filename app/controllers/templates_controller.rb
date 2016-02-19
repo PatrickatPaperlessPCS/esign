@@ -1,4 +1,6 @@
 class TemplatesController < ApplicationController
+  require 'blitline'
+
   before_action :set_template, only: [:show, :edit, :update, :destroy]
 
   # GET /templates

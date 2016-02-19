@@ -38,6 +38,7 @@ gem "mini_magick"
 gem 'drip-ruby', require: 'drip'
 gem 'aws-sdk', '< 2.0'
 gem "figaro" #for security of environmental varibles
+gem 'blitline'
 # gem 'wicked_pdf'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

@@ -57,6 +57,8 @@ GEM
     bcrypt (3.1.10)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
+    blitline (1.2.3)
+      yajl-ruby
     bootstrap-sass (3.3.6)
       autoprefixer-rails (>= 5.2.1)
       sass (>= 3.3.4)
@@ -232,6 +234,7 @@ GEM
       sprockets-rails (>= 2.0, < 4.0)
     will_paginate (3.0.7)
     wkhtmltopdf-binary (0.9.9.3)
+    yajl-ruby (1.1.0)
 
 PLATFORMS
   ruby
@@ -239,6 +242,7 @@ PLATFORMS
 DEPENDENCIES
   awesome_print
   aws-sdk (< 2.0)
+  blitline
   bootstrap-sass (~> 3.3.5)
   byebug
   coffee-rails (~> 4.1.0)
