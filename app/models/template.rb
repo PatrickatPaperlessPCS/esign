@@ -4,7 +4,7 @@ class Template < ActiveRecord::Base
   has_attached_file :attachment1, default_url: "/images/missing.png"
   
 
-  validates_attachment_content_type :attachment1, content_type: [/image/, "application/pdf"], path: '/templates', url: '/templates'
+  validates_attachment_content_type :attachment1, path: '/templates', url: '/templates',content_type: [/image/, 'application/pdf', 'application/msword', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document']
 
   belongs_to :user
   has_one :signature_position
@@ -32,36 +32,30 @@ class Template < ActiveRecord::Base
 
 
 
-#    def run_blitline_job
-#      filename = File.basename(image, '.*')
-#      # self.title ||= sanitize_filename(filename).titleize # set default name based on filename
-
-#      filename_with_ext = File.basename(image)
-#      key = "uploads/thumbnails/#{SecureRandom.hex}/#{filename_with_ext}"
-
-#      bucket = ENV["AWS_BUCKET_ID"]
-
-#      images = blitline_job(image, bucket, key)
-#      self.image = images['results'][0]['images'][0]['s3_url'] # extracts s3_url from blitline's ruby hashes
-#    end
-
     def blitline_job
-      job_data = {
-        "application_id" => "0gy-omTDaj-kfNJ4QHV_rQg",
-        "src" => attachment1.url,
-        'postback_url' => Rails.application.routes.url_helpers.blitline_callbacks_url(host: 'http://4921befa.ngrok.io'),
-          "functions": [
-              {
-                  "name": "resize_to_fit",
-                  "params": {
-                      "width": 1500
-                  },
-                  "save": {
-                      "image_identifier": "external_sample_1"
-                  }
-              }
-          ]
-      };
+	job_data = {
+		    "application_id": "0gy-omTDaj-kfNJ4QHV_rQg",
+			"src" => attachment1.url,
+		    "src_type" => "smart_image",
+		    "wait_retry_delay" => 10,
+		    "retry_postback" => true,
+		    "v" => 1.22,
+		    "functions": [
+		        {
+		            "name": "resize_to_fit",
+		            "params": {
+		                "width": 1500,
+		            },
+		            "save": {
+		                "image_identifier": "external_sample_1",
+		                "png_quant": true,
+		                "extension": "png",
+		                "s3_destination"   => { "key" => "image", "bucket" => ENV["AWS_BUCKET_ID"] } # push to your S3 bucket
+
+		            }
+		        }
+		    ]
+		}
 
       http = Net::HTTP.new("api.blitline.com", 80)
       request = Net::HTTP::Post.new("http://api.blitline.com/job")
