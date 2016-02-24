@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160209214634) do
+ActiveRecord::Schema.define(version: 20160224172107) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -56,8 +56,8 @@ ActiveRecord::Schema.define(version: 20160209214634) do
   end
 
   create_table "templates", force: :cascade do |t|
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
     t.string   "attachment1_file_name"
     t.string   "attachment1_content_type"
     t.integer  "attachment1_file_size"
@@ -68,6 +68,7 @@ ActiveRecord::Schema.define(version: 20160209214634) do
     t.string   "pages_content_type"
     t.integer  "pages_file_size"
     t.datetime "pages_updated_at"
+    t.string   "processed_attachement_url"
   end
 
   create_table "users", force: :cascade do |t|

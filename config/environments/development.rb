@@ -39,6 +39,9 @@ Rails.application.configure do
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
 
+  config.blitline_callback_host = 'http://394f0c2e.ngrok.io'
+
+
   # Sets Paperclip to use Amazon S3
   config.paperclip_defaults = {
   :storage => :s3,

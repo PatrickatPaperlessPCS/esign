@@ -77,6 +77,9 @@ Rails.application.configure do
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
 
+  # TODO - uncomment and past in proper URL.  
+  #config.blitline_callback_host = 'http://esign.com' # or whatever your domain will be
+
 
   # Sets Paperclip to use Amazon S3
   config.paperclip_defaults = {

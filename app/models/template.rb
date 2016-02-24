@@ -1,8 +1,7 @@
 class Template < ActiveRecord::Base
   require 'blitline'
 
-  has_attached_file :attachment1, default_url: "/images/missing.png"
-  
+  has_attached_file :attachment1, url: "/esignhealth/images/:id/:filename", path:"/esignhealth/images/:id/:filename"
 
   validates_attachment_content_type :attachment1, path: '/templates', url: '/templates',content_type: [/image/, 'application/pdf', 'application/msword', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document']
 
@@ -33,12 +32,15 @@ class Template < ActiveRecord::Base
 
 
     def blitline_job
+
 	job_data = {
 		    "application_id": "0gy-omTDaj-kfNJ4QHV_rQg",
 			"src" => attachment1.url,
-		    "src_type" => "smart_image",
+		    #{}"src_type" => "smart_image",
 		    "wait_retry_delay" => 10,
 		    "retry_postback" => true,
+		    #{}"src_type" => "burst_pdf",
+		    "postback_url" => 'http://646aa1ca.ngrok.io/blitline_callbacks',
 		    "v" => 1.22,
 		    "functions": [
 		        {
@@ -50,12 +52,13 @@ class Template < ActiveRecord::Base
 		                "image_identifier": "external_sample_1",
 		                "png_quant": true,
 		                "extension": "png",
-		                "s3_destination"   => { "key" => "image", "bucket" => ENV["AWS_BUCKET_ID"] } # push to your S3 bucket
+		                "s3_destination"   => { "key" => "esignhealth/images/#{id}/upload.png", "bucket" => ENV["AWS_BUCKET_ID"] } # push to your S3 bucket
 
 		            }
 		        }
 		    ]
 		}
+
 
       http = Net::HTTP.new("api.blitline.com", 80)
       request = Net::HTTP::Post.new("http://api.blitline.com/job")

@@ -1,6 +1,5 @@
 <body>
-<%= image_tag @document.template.attachment1.url(:image), :class => 'zindex', width: '1225', height: '1500', margin: '0px', padding: '0px'%>
-
+<%= image_tag @document.template.processed_attachement_url%>
 <% @document.dynamic_textfields.each do |dt| %>
   <div style='position: absolute; left: <%= dt.left %>px; top: <%= dt.top %>px' >
     <input class='rendered-dynamic-textfield' readonly value='<%= dt.text %>' />

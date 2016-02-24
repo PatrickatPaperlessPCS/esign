@@ -10,14 +10,14 @@
       </ul>
     </div>
   <% end %>
-
+  <div class="actions center">
+    <%= f.submit %>
+  </div>
 <div id='template_edit'>
-  <%= image_tag @template.attachment1.url(:image), :class => 'zindex', width: '1225', height: '1500', margin: '0px', padding: '0px'%>
+<%= image_tag @template.processed_attachement_url%>
 
 </div>
 
 <br>
-  <div class="actions center">
-    <%= f.submit %>
-  </div>
+
 <% end %>
