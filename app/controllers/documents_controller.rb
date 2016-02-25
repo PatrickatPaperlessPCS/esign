@@ -13,7 +13,7 @@ class DocumentsController < ApplicationController
   def show
     respond_to do |format|
       format.html
-      format.pdf
+      format.pdf 
      end  
   end
 

@@ -2,11 +2,13 @@
   .sigWrappershow {
   position: relative;
   clear: both;
+  background: transparent;
 }
 
 .padShow {
   position: relative;
   width: 375px;
+  background: transparent;
 }
 
 .sigPadshow {
@@ -14,13 +16,15 @@
   padding: 0;
   width: 400px;
   text-align: center;
+  background: transparent;
 }
 
 }
 
 .img{
+  display: none;
 	page-break-inside: auto;
-	width: 1500px;
+	min-width: 100%;
 	z-index: -1;
 }
 
