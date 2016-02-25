@@ -1,4 +1,3 @@
-<meta name="viewport" content="width=device-width, initial-scale=1">
 <%= form_for(@document, html: { multipart: true}) do |f| %>
   <% if @document.errors.any? %>
     <div id="error_explanation">
@@ -11,30 +10,11 @@
       </ul>
     </div>
   <% end %>
-<div class="center">
-  <nav class="navbar navbar-default nav-float">
-    <button class="btn btn-success btn-lg text-center navbutton" type="button" data-toggle="modal" data-target="#signatureModal">Complete and Sign</button>
-  </nav>
-</div>
+
 <script src="\assets\json2.min.js"></script>
 <link href="\assets\jquery.signaturepad.css" rel="stylesheet">
-<!-- <script type="text/javascript">
-    $(window).load(function(){
-        $('#instructionsModal').modal('show');
-    });
-</script> -->
-
 <div id="textfields" style="cursor:text">
-
-
-
-
-
 <%= image_tag @document.template.processed_attachement_url%>
-
-<br>
-
-
 <!--Signature Modal -->
 <div class="modal fade sigmodal" id="signatureModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">
@@ -86,4 +66,10 @@ Instructions Modal
 </div>
 -->
 </div> <!-- image div -->
+
+<div class="center">
+  <footer class="navbar navbar-default nav-float">
+    <button class="btn btn-success btn-lg text-center navbutton" type="button" data-toggle="modal" data-target="#signatureModal">Complete and Sign</button>
+  </footer>
+</div>
 <% end %>

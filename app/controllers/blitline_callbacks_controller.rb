@@ -14,3 +14,12 @@ class BlitlineCallbacksController < ApplicationController
 	end
 
 end
+
+# config/environments/development.rb
+#config.blitline_callbacks_url = 'http://ngrok url that you have locally'
+
+# config/environments/production.rb
+#config.blitline_callbacks_url = Rails.application.routes.url_helpers.blitline_callbacks_create_url
+
+
+# then 

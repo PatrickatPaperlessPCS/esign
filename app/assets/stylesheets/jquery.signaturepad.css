@@ -231,12 +231,12 @@ p.error {
 .sigWrappershow {
   position: relative;
   clear: both;
-  z-index: -1;
 }
 
 .padShow {
   position: relative;
   width: 375px;
+  background: transparent;
 }
 
 .sigPadshow {
@@ -244,6 +244,17 @@ p.error {
   padding: 0;
   width: 400px;
   text-align: center;
+}
+.signature {
+  z-index: 1;
+}
+
+
+/* Submit Button on documents/edit */
+.gobutton {
+  position: relative;
+  padding-left: 15px;
+  vertical-align: center;
 }
 
 @media print{
@@ -264,11 +275,5 @@ p.error {
   text-align: center;
 }
 
-}
-
-.gobutton {
-  position: relative;
-  padding-left: 15px;
-  vertical-align: center;
 }
 

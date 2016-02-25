@@ -1,14 +1,17 @@
+<%= stylesheet_link_tag 'print', :media => "print" %>
 <body>
-<%= image_tag @document.template.processed_attachement_url%>
+<%= image_tag @document.template.processed_attachement_url, :class => "zindex" %>
 <% @document.dynamic_textfields.each do |dt| %>
-  <div style='position: absolute; left: <%= dt.left %>px; top: <%= dt.top %>px' >
+ <div class='positivez'>
+ <div style='position: absolute; left: <%= dt.left %>px; top: <%= dt.top %>px' >
     <input class='rendered-dynamic-textfield' readonly value='<%= dt.text %>' />
   </div>
  <% end %>
- 
  <div id="signature" style='position: absolute; left: <%= @document.template.signature_position.left %>px; top: <%= @document.template.signature_position.top %>px '>
   <div class="sigshow sigWrappershow">
     <canvas class="padShow" width="540" height="100"></canvas>
+    <br>
+    Electronically signed at: <%= @document.updated_at %>
   </div>
 </div>
 <script type="text/javascript">
@@ -16,4 +19,5 @@ $(function() {
   renderSignature(<%= @document.signature.to_json.html_safe %>, 'div#signature');
 });
 </script>  
+</div>
 </body>

@@ -53,11 +53,7 @@ margin-top: 5px;
 }
 
 .zindex{
-    page-break-before: auto;  
-    page-break-inside: avoid;
     z-index: -1;
-    min-height: 1650px;
-    min-width: 1225px;
     padding: 0px;
 }
 .textwhite{
@@ -67,4 +63,8 @@ margin-top: 5px;
 .nav-float{
 	position: relative;
 	z-index: 1;
+}
+
+.positivez{
+	z-index: 2;
 }

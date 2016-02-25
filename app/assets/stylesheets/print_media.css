@@ -1,0 +1,30 @@
+@media print{
+  .sigWrappershow {
+  position: relative;
+  clear: both;
+}
+
+.padShow {
+  position: relative;
+  width: 375px;
+}
+
+.sigPadshow {
+  margin: 0;
+  padding: 0;
+  width: 400px;
+  text-align: center;
+}
+
+}
+
+.img{
+	page-break-inside: auto;
+	width: 1500px;
+	z-index: -1;
+}
+
+
+.positivez{
+	z-index: 2;
+}

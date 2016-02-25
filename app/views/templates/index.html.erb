@@ -13,7 +13,7 @@
 
   <tbody>
     <% @templates.each do |template| %>
-      <tr class="<%= template.signature_position ? 'success' : 'danger' %>">
+      <tr class="<%= template.processed_attachement_url ? 'success' : 'danger' %>">
         <td><%= template.name %></td>
         <td><%= link_to 'View', template %></td>
         <td><%= link_to 'Set Signature Position', edit_template_path(template) %></td>
