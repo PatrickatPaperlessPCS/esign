@@ -13,7 +13,9 @@ class DocumentsController < ApplicationController
   def show
     respond_to do |format|
       format.html
-      format.pdf 
+      format.pdf do
+        render  :pdf => "file.pdf", :template => 'documents/show.html.erb'
+       end        
      end  
   end
 

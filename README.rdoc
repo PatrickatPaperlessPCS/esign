@@ -2,6 +2,7 @@
 
 EsignHealth Application
 
+TO DO LIST:
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+1) Setup reload after call back on templates index
+

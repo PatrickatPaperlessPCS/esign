@@ -37,7 +37,7 @@ class TemplatesController < ApplicationController
 
     respond_to do |format|
       if @template.save
-        format.html { redirect_to templates_path, notice: 'Template was successfully created.' }
+        format.html { redirect_to templates_path, notice: 'Template was successfully created. Please wait while we process your file.' }
         format.json { render :show, status: :created, location: @template }
       else
         format.html { render :new }
@@ -51,7 +51,7 @@ class TemplatesController < ApplicationController
   def update
     respond_to do |format|
       if @template.update(template_params)
-        format.html { redirect_to templates_path, notice: 'Template was successfully updated.' }
+        format.html { redirect_to templates_path, notice: 'Your signature position was successfully set.' }
         format.json { render :show, status: :ok, location: @template }
       else
         format.html { render :edit }

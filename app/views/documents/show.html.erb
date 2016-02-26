@@ -1,6 +1,8 @@
-<%= stylesheet_link_tag 'print', :media => "print" %>
+  <head>
+    <meta charset='utf-8' />
+    <%= wicked_pdf_stylesheet_link_tag "print_media" -%>
+  </head>
 <body>
-<%= image_tag @document.template.processed_attachement_url, :class => "zindex" %>
 <% @document.dynamic_textfields.each do |dt| %>
  <div class='positivez'>
  <div style='position: absolute; left: <%= dt.left %>px; top: <%= dt.top %>px' >
@@ -20,4 +22,6 @@ $(function() {
 });
 </script>  
 </div>
+</div>
+<%= image_tag @document.template.processed_attachement_url, width: '1500' %>
 </body>

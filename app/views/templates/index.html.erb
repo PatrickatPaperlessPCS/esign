@@ -6,6 +6,8 @@
   <thead>
     <tr>
       <th> Template Name </th>
+      <th></th>
+      <th> Signature Position</th>
       <th colspan="3"></th>
       
     </tr>
@@ -15,9 +17,18 @@
     <% @templates.each do |template| %>
       <tr class="<%= template.processed_attachement_url ? 'success' : 'danger' %>">
         <td><%= template.name %></td>
+        <% unless template.processed_attachement_url.blank? %>
         <td><%= link_to 'View', template %></td>
-        <td><%= link_to 'Set Signature Position', edit_template_path(template) %></td>
+        <td>
+          <% if template.signature_position.blank? %><%= link_to 'Set Signature Position', edit_template_path(template) %></td> <% else %> <%= image_tag('checkmark.png', :class => 'center')  %>  Already Set<% end %>
         <td><%= link_to 'Delete Template', template, method: :delete, data: { confirm: "Are you sure?  Any documents you've created using this template will no longer be available" } %></td>
+<% else %>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <% end %>
+
       </tr>
     <% end %>
   </tbody>

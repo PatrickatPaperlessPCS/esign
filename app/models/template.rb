@@ -40,7 +40,7 @@ class Template < ActiveRecord::Base
 		    "wait_retry_delay" => 10,
 		    "retry_postback" => true,
 		    #{}"src_type" => "burst_pdf",
-		    "postback_url" => 'http://646aa1ca.ngrok.io/blitline_callbacks',
+		    "postback_url" => 'http://e4dd7224.ngrok.io/blitline_callbacks', #{}"postback_url": Rails.application.routes.url_helpers.blitline_callbacks_url(host: Rails.application.config.blitline_callbacks_host)
 		    "v" => 1.22,
 		    "functions": [
 		        {
