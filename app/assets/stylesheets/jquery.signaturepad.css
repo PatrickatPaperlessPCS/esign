@@ -228,6 +228,7 @@ p.error {
   color: #fff;
   font-weight: bold;
 }
+/*
 .sigWrappershow {
   position: relative;
   clear: both;
@@ -247,7 +248,7 @@ p.error {
 }
 .signature {
   z-index: 1;
-}
+}*/
 
 
 /* Submit Button on documents/edit */

@@ -4,6 +4,9 @@
     <%= wicked_pdf_javascript_include_tag "rendersignature.js" %>
     <%= wicked_pdf_javascript_include_tag "sigpad.js" %>
     <%= wicked_pdf_javascript_include_tag "jquery.signaturepad.js" %>
+    <%= wicked_pdf_javascript_include_tag "jquery.js" %>
+    <%= wicked_pdf_javascript_include_tag "jquery.signaturepad.min.js" %>
+
   </head>
 <body class="body">
 <% @document.dynamic_textfields.each do |dt| %>
@@ -12,11 +15,10 @@
     <input class='rendered-dynamic-textfield' readonly value='<%= dt.text %>' />
   </div>
  <% end %>
- <div id="signature" style='position: absolute; left: <%= @document.template.signature_position.left %>px; top: <%= @document.template.signature_position.top %>px '>
-  <div class="sigshow sigWrappershow">
+ <div id="signature" style='position: absolute; left: <%= @document.template.signature_position.left %>px; top: <%= @document.template.signature_position.top %>px; '>
+  Electronically signed at: <%= @document.updated_at %>
+  <div style='opacity: 0.8;'>
     <canvas class="padShow" width="540" height="100"></canvas>
-    <br>
-    Electronically signed at: <%= @document.updated_at %>
   </div>
 </div>
 <script type="text/javascript">
