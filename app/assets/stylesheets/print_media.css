@@ -29,10 +29,15 @@
 
 .img{
 	page-break-inside: auto;
-	min-width: 100%;
 	z-index: 1;
+  background-color: blue;
 }
 
+.rendered-dynamic-textfield {
+  background: transparent;
+  border: 0;
+  z-index: 1;
+} 
 
 .positivez{
 	z-index: 2;

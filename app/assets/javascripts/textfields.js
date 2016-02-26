@@ -19,7 +19,7 @@ jQuery(document).ready(function () {
     var div = jQuery('<div></div>').addClass('dynamic-textbox').css({
       position: 'absolute',
       background: 'transparent',
-      top: cursorY - 10 + 'px',
+      top: cursorY - 1 + 'px',
       left: cursorX - 20 + 'px',
     });
 

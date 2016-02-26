@@ -27,7 +27,7 @@ gem 'devise'
 gem 'signature-pad-rails' #signature pad for signature capture
 gem 'unicorn'
 gem 'json'
-gem 'wkhtmltopdf-binary'
+gem 'wkhtmltopdf-binary-edge', '~> 0.12.2.1'
 #gem 'pdfkit'
 gem 'postmark-rails'
 gem 'bootstrap-sass', '~> 3.3.5'
