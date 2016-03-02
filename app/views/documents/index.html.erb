@@ -17,7 +17,7 @@
   <tbody>
     <% @documents.each do |document| %>
       <tr class="<%= document.signature ? 'success' : 'danger' %>">
-        <td><%= document.created_at.strftime("%b %d %Y at %I:%M %p") %></td>
+        <td><%= document.created_at.strftime("%b %d %Y at %I:%M %p") %> UTC</td>
         <td><%= document.recipient %></td>
 
         <td><%= image_tag('checkmark.png') if document.signature? %></td>

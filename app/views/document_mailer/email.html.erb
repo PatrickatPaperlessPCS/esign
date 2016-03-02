@@ -14,14 +14,16 @@
 	<div class="center">
 	<img src="http://esignhealth.com/wp-content/uploads/2016/01/esignhealth-300x300.jpg" alt="logo" class="center"/>
 </div>
+<div class-"container">
 <div class="header">
 <h2> Critical Documentation Needed: </h2>
 </div>
-<p> <%= @document.user.name %> at <%= @document.user.company_name %> has sent you a document for completion.
+<p style='padding-left: 15px;'> <%= @document.user.name %> at <%= @document.user.company_name %> has sent you a document for completion.
 <br>
 For your convience, please follow this link to electronically complete the documentation process: </p>
 <br>
-<h4> <%= link_to 'Click Here to complete the necessary documents', edit_document_url(:id => @document.id, :authentication_token => @document.authentication_token) %> </h4>
+<h4 style='padding-left: 15px;'> <%= link_to 'Click Here to complete the necessary documents', edit_document_url(:id => @document.id, :authentication_token => @document.authentication_token) %> </h4>
 <br>
-<p>* this link is forwardable, but can only be used once. <p/>
+<p style='padding-left: 15px;'>* this link is forwardable, but can only be used once. <p/>
 
+</div>

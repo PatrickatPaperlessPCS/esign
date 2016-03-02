@@ -16,7 +16,7 @@
   </div>
  <% end %>
  <div id="signature" style='position: absolute; left: <%= @document.template.signature_position.left %>px; top: <%= @document.template.signature_position.top %>px; '>
-  Electronically signed at: <%= @document.updated_at %>
+ <b>Electronically signed at: <%= @document.updated_at %></b> 
   <div style='opacity: 0.8;'>
     <canvas class="padShow" width="540" height="100"></canvas>
   </div>

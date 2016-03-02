@@ -12,7 +12,7 @@ jQuery(document).ready(function () {
       position: 'absolute',
       background: 'lightgreen',
       opacity: '0.6',
-      top: cursorY - 10 + 'px',
+      top: cursorY - 1 + 'px',
       left: cursorX - 20 + 'px',
       width: '540px',
       height: '100px'

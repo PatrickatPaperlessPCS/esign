@@ -12,8 +12,7 @@
 .sigPad {
   margin: 0;
   padding: 0;
-  text-align: center;
-  color: #000;
+  width: 200px;
 }
 
 .sigPad label {
@@ -34,7 +33,7 @@
   padding: 0.2em 0;
   width: 198px;
 
-  
+  border: 1px solid #666;
 
   font-size: 1em;
 }
@@ -47,7 +46,7 @@
   margin: 1em 0 0 0;
   padding: 0.6em 0.6em 0.7em;
 
-  background-color: #00CC66;
+  background-color: #ccc;
   border: 0;
   -moz-border-radius: 8px;
   -webkit-border-radius: 8px;
@@ -55,7 +54,7 @@
 
   cursor: pointer;
 
-  color: #FFF;
+  color: #555;
   font: bold 1em/1.375 sans-serif;
   text-align: left;
 }
@@ -129,14 +128,14 @@
   display: none;
   position: absolute;
   right: 0;
-  background-color: orange;
+
   font-size: 0.75em;
   line-height: 1.375;
 }
 
 .sigWrapper {
   clear: both;
-  height: 105px;
+  height: 55px;
 
   border: 1px solid #ccc;
 }
@@ -148,6 +147,7 @@
 .signed .sigWrapper {
   border: 0;
 }
+
 
 .pad {
   position: relative;
@@ -173,37 +173,17 @@
   -o-user-select: none;
   user-select: none;
 }
+.typed {
+  height: 55px;
+  margin: 0;
+  padding: 0 5px;
+  position: absolute;
+  z-index: 90;
 
+  cursor: default;
 
-.signuppad {
-  position: relative;
-  position: relative;
-  vertical-align: left;
-  /**
-   * For cross browser compatibility, this should be an absolute URL
-   * In IE the cursor is relative to the HTML document
-   * In all other browsers the cursor is relative to the CSS file
-   *
-   * http://www.useragentman.com/blog/2011/12/21/cross-browser-css-cursor-images-in-depth/
-   */
-  cursor: url("../assets/pen.cur"), crosshair;
-  /**
-   * IE will ignore this line because of the hotspot position
-   * Unfortunately we need this twice, because some browsers ignore the hotspot inside the .cur
-   */
-  cursor: url("pen.cur") 16 16, crosshair;
-
-  -ms-touch-action: none;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  -o-user-select: none;
-  user-select: none;
-}
-.sigWrappersignup {
-  clear: both;
-  height: 100px;
-  border: 1px solid #ccc;
+  color: #145394;
+  font: normal 1.875em/50px "Journal",Georgia,Times,serif;
 }
 
 .typeItDesc,
@@ -215,7 +195,7 @@
   border-top: 3px solid #ccc;
 
   color: #000;
-  font: italic normal 2em/1.375 Georgia,Times,serif;
+  font: italic normal 1em/1.375 Georgia,Times,serif;
 }
 
 p.error {
@@ -228,33 +208,3 @@ p.error {
   color: #fff;
   font-weight: bold;
 }
-/*
-.sigWrappershow {
-  position: relative;
-  clear: both;
-}
-
-.padShow {
-  position: relative;
-  width: 375px;
-  background: transparent;
-}
-
-.sigPadshow {
-  margin: 0;
-  padding: 0;
-  width: 400px;
-  text-align: center;
-}
-.signature {
-  z-index: 1;
-}*/
-
-
-/* Submit Button on documents/edit */
-.gobutton {
-  position: relative;
-  padding-left: 15px;
-  vertical-align: center;
-}
-

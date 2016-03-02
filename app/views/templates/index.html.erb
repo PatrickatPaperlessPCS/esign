@@ -20,7 +20,7 @@
         <% unless template.processed_attachement_url.blank? %>
         <td><%= link_to 'View', template %></td>
         <td>
-          <% if template.signature_position.blank? %><%= link_to 'Set Signature Position', edit_template_path(template) %></td> <% else %> <%= image_tag('checkmark.png', :class => 'center')  %>  Already Set<% end %>
+          <% if template.signature_position.blank? %><%= link_to 'Set Signature Position', edit_template_path(template) %> <% else %> <%= image_tag('checkmark.png', :class => 'center')  %>  Already Set -- <%= link_to 'Change Signature Position', edit_template_path(template) %></td><% end %>
         <td><%= link_to 'Delete Template', template, method: :delete, data: { confirm: "Are you sure?  Any documents you've created using this template will no longer be available" } %></td>
 <% else %>
         <td> </td>

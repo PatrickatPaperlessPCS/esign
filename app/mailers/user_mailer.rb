@@ -1,5 +1,5 @@
 class UserMailer < ApplicationMailer
-  default :from => 'info@paperlesspcs.com'
+  default :from => 'support@esignhealth.com'
 
 	def sign_up(id)
 	@user = User.find(id)	
