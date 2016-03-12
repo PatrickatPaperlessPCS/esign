@@ -5,17 +5,25 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title">We're sorry, there was an error in your request:</h4>
+        <h4 class="modal-title">Thanks for trying us out!</h4>
       </div>
       <div class="modal-body">
-        	<h4>Thanks for trying us out!</h4><br>
-           <p> Time flies when you're having fun, but your trial has expired. Payment is required to proceed.  
-            <br><br>Please click the link below: </p>
-            <div class="center"%>
-            <%= render'form' %></div>
+      <div class="center"><%= image_tag("graylogo.jpg", width: '200', height: '75') %></div>
+        	<h4>Glad you've got a lot of use out of eSignHealth!</h4><br>
+            <p>Each free demo comes with the ability to try out our software by:
+          <ul style="text-indent: 15px;">
+            <li>Sending 10 documents to send to any recipient </li>
+            <li>Creating up to 2 templates for your use</li>
+          </ul> 
+          But, to keep providing you with world-class HIPAA compliant software (and keep the lights on around here) we want you to become our customer.  
+</p>
+            <hr>
+  <div>         
+      <div class="center">
+            <%= render'form' %>
+        <p style="padding-top: 10px;"> There’s no risk and you can cancel anytime with a single click from your dashboard.</p><br>
       </div>
-
-      
+  </div>    
       <div class="modal-footer center">
           Having trouble?  Reach out to us at support@esignhealth.com
       </div>

@@ -74,3 +74,44 @@ margin-top: 5px;
   padding-left: 15px;
   vertical-align: center;
 }
+
+a.back-to-top {
+	display: none;
+	width: 60px;
+	height: 60px;
+	text-indent: -9999px;
+	position: fixed;
+	z-index: 999;
+	right: 20px;
+	bottom: 20px;
+	background: #27AE61 no-repeat center 43%;
+	-webkit-border-radius: 30px;
+	-moz-border-radius: 30px;
+	border-radius: 30px;
+}
+
+.signbutton {
+	right: 20px;
+	bottom: 20px;
+	position: fixed;
+	z-index: 999;
+}
+
+.templatebutton {
+	right: 175px;
+	bottom: 20px;
+	position: fixed;
+	z-index: 999;
+	background-color: gray;
+}
+
+.opaque {
+	background-color: white;
+	page-break-before: avoid;
+}
+
+.ccexp {
+	width: 250px;
+	text-align: center;
+
+}

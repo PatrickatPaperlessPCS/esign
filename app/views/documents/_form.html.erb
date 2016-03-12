@@ -10,13 +10,13 @@
       </ul>
     </div>
   <% end %>
-
 <script src="\assets\json2.min.js"></script>
 <link href="\assets\jquery.signaturepad.css" rel="stylesheet">
 <div id="textfields" style="cursor:text">
 <%= image_tag @document.template.processed_attachement_url, width: '1110'%>
 <!--Signature Modal -->
 </div>
+
 <div class="modal fade sigmodal" id="signatureModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -31,13 +31,12 @@
     <div class="sig sigWrappersignup">
        <canvas class="signuppad" width="498" height="73" style="cursor:crosshair" ></canvas>
       <%= f.hidden_field :signature, class: "output" %>
-    </div>
-  </div>
-</div>  
       </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
- 
+    </div>
+  </div>  
+</div>
+<div class="modal-footer">
+   <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
         <input type="submit" class="btn btn-primary" name="commit" value="Sign and Complete" />
       </div>
     </div>
@@ -68,9 +67,12 @@ Instructions Modal
 -->
 </div> <!-- image div -->
 
-<div class="center">
-  <footer class="navbar navbar-default nav-float">
-    <button class="btn btn-success btn-lg text-center navbutton" type="button" data-toggle="modal" data-target="#signatureModal">Complete and Sign</button>
-  </footer>
-</div>
+<!--<div class="center">
+  <footer class="navbar navbar-default nav-float">-->
+    <button class="btn btn-success btn-lg text-center navbutton signbutton" type="button" data-toggle="modal" data-target="#signatureModal">Complete and Sign</button>
+<!--  </footer>
+</div>-->
+
+
+
 <% end %>

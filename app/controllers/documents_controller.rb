@@ -28,7 +28,7 @@ class DocumentsController < ApplicationController
 
   # GET /documents/new
   def new
-      if current_user.created_at <= 5.days.ago && !current_user.subscribed
+      if current_user.documents.count >= 10 && !current_user.subscribed
         redirect_to new_charge_path
       else
         @document = Document.new

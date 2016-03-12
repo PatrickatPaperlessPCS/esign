@@ -25,8 +25,7 @@
 <% else %>
         <td> </td>
         <td> </td>
-        <td> </td>
-        <td> </td>
+<td><%= link_to 'Delete Template', template, method: :delete, data: { confirm: "Are you sure?  Any documents you've created using this template will no longer be available" } %></td>
         <% end %>
 
       </tr>
