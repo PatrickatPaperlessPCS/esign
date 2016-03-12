@@ -15,18 +15,24 @@
     <input class='rendered-dynamic-textfield' readonly value='<%= dt.text %>' />
   </div>
  <% end %>
- <div id="signature" style='position: absolute; left: <%= @document.template.signature_position.left %>px; top: <%= @document.template.signature_position.top %>px; '>
- <b style=" background-color: white; ">Electronically signed at: <%= @document.updated_at %></b> 
-  <div style='opacity: 0.8;'>
-    <canvas class="padShow" width="540" height="100" style="page-break-before: avoid;"></canvas>
-  </div>
+<% if @document.template.signature_position.nil? %>
+<div></div>
+<% else %>
+     <div id="signature" style='position: absolute; left: <%= @document.template.signature_position.left %>px; top: <%= @document.template.signature_position.top %>px; '>
+     <b style=" background-color: white; ">Electronically signed at: <%= @document.updated_at %></b> 
+      <div style='opacity: 0.8;'>
+        <canvas class="padShow" width="540" height="100" style="page-break-before: avoid;"></canvas>
+      </div>
+    </div>
+    <script type="text/javascript">
+    $(function() {
+      renderSignature(<%= @document.signature.to_json.html_safe %>, 'div#signature');
+    });
+    </script>
+<% end %>
+
 </div>
-<script type="text/javascript">
-$(function() {
-  renderSignature(<%= @document.signature.to_json.html_safe %>, 'div#signature');
-});
-</script>  
 </div>
-</div>
+
 <%= image_tag @document.template.processed_attachement_url, width: '1110' %>
 </body>

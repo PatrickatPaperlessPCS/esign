@@ -21,7 +21,7 @@
         <td><%= document.recipient %></td>
 
         <td><%= image_tag('checkmark.png') if document.signature? %></td>
-        <td><%= link_to 'Open PDF',  document_path(document, :format => "pdf") %></td>
+        <td><%= link_to 'Open PDF',  document_path(document, :format => "pdf")%> </td>
         <td><%= link_to 'Delete', document, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
