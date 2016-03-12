@@ -40,11 +40,11 @@ class DocumentsController < ApplicationController
   # GET /documents/1/edit
   def edit
     # Remove and edit this so that it validates against the token and id
-    if @cms484.phy_sign.present?
-    redirect_to pages_error_path
-  else
+    #if @document.signature.present?
+    #redirect_to pages_error_path
+  #else
     @document = Document.find_by(authentication_token: params[:authentication_token], id: params[:id])
-    end
+    #end
   end
 
   # POST /documents
