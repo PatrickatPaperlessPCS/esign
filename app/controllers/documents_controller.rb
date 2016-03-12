@@ -73,7 +73,7 @@ class DocumentsController < ApplicationController
       if @document.update(document_params)
         DocumentMailer.update(@document).deliver_later
         # TODO: replace root_path with pages_thankyou_path
-        format.html { redirect_to root_path, notice: 'Document was successfully updated.' }
+        format.html { redirect_to "http://esignhealth.com", notice: 'Document was successfully updated.' }
         format.json { render :show, status: :ok, location: @document }
       else
         format.html { render :edit }
