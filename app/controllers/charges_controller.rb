@@ -14,7 +14,6 @@ def create
 	  	)
 
 	  current_user.subscribed = true
-	  #current.user.plan = :plan
 	  current_user.save!
 	  
 	  redirect_to documents_path
