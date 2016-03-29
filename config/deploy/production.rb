@@ -9,7 +9,7 @@ server '69.176.117.34', user: 'manager', roles: %w{app db web}, keys: '~/.ssh/id
 # server 'example.com', user: 'deploy', roles: %w{app web}, other_property: :other_value
 # server 'db.example.com', user: 'deploy', roles: %w{db}
 
-
+set :rails_env, 'production'
 # role-based syntax
 # ==================
 
