@@ -1,7 +1,7 @@
 # config valid only for current version of Capistrano
 lock '3.4.0'
 
-set :application, 'eSignHealth'
+set :application,'eSignHealth'
 set :repo_url, 'git@github.com:PatrickatPaperlessPCS/esign.git'
 
 # Default branch is :master
@@ -18,6 +18,8 @@ set :scm, :git
 
 # Default value for :log_level is :debug
 set :log_level, :debug
+
+# set :tmp_dir, "~/tmp"
 
 # Default value for :pty is false
 # set :pty, true
