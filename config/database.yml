@@ -81,5 +81,5 @@ test:
 production:
   <<: *default
   database: esign_production
-  username: esign
-  password: <%= ENV['ESIGN_DATABASE_PASSWORD'] %>
+  username: esign_db_user
+  password: $esign_health$
