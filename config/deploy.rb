@@ -19,6 +19,7 @@ set :scm, :git
 # Default value for :log_level is :debug
 set :log_level, :debug
 
+set :unicorn_pid, '/opt/www/eSignHealth/pids/unicorn.pid'
 # set :tmp_dir, "~/tmp"
 
 # Default value for :pty is false
@@ -38,8 +39,8 @@ set :keep_releases, 5
 
 after 'deploy:publishing', 'deploy:restart'
 
-namespace :deploy do
-  task :restart do
+	namespace :deploy do
+	  task :restart do
     invoke 'unicorn:reload'
   end
 end
