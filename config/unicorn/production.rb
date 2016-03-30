@@ -21,5 +21,5 @@ listen "/tmp/unicorn.eSignHealth.sock"
 worker_processes 2
 
 # Time-out
-timeout 30
+timeout 90
 

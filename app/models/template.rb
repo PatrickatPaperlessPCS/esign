@@ -41,7 +41,7 @@ class Template < ActiveRecord::Base
 		    "retry_postback" => true,
 		    #{}"src_type" => "burst_pdf",
         # change this for offline blitline use in development
-		    "postback_url" => 'http://secure.esignhealth.com/blitline_callbacks', #{}"postback_url": Rails.application.routes.url_helpers.blitline_callbacks_url(host: Rails.application.config.blitline_callbacks_host)
+		    "postback_url" => 'https://secure.esignhealth.com/blitline_callbacks', #{}"postback_url": Rails.application.routes.url_helpers.blitline_callbacks_url(host: Rails.application.config.blitline_callbacks_host)
 		    "v" => 1.22,
 		    "functions": [
 		        {
