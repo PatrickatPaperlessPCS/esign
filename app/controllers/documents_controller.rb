@@ -16,7 +16,7 @@ class DocumentsController < ApplicationController
       format.pdf do
         render    :pdf => "file",
                   :template => 'documents/show.html.erb',
-                  :javascript_delay => '5000',
+                  :javascript_delay => '500',
                   :page_size =>        'Letter',
                margin:  {   top:               5,                     # default 10 (mm)
                             bottom:            5,
