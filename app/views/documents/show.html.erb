@@ -12,7 +12,7 @@
 <% @document.dynamic_textfields.each do |dt| %>
  <div class='positivez'>
  <div style='position: absolute; left: <%= dt.left %>px; top: <%= dt.top %>px' >
-    <input class='rendered-dynamic-textfield' readonly value='<%= dt.text %>' />
+    <input class='rendered-dynamic-textfield' readonly value='<%= dt.text %>' style='outline: none; border: none;'/>
   </div>
  <% end %>
 <% if @document.template.signature_position.nil? %>
