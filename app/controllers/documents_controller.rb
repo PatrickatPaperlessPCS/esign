@@ -14,7 +14,7 @@ class DocumentsController < ApplicationController
     respond_to do |format|
       format.html
       format.pdf do
-        render    :pdf => "file.pdf",
+        render    :pdf => "file",
                   :template => 'documents/show.html.erb',
                   :javascript_delay => '5000',
                   :page_size =>        'Letter',
