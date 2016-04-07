@@ -38,6 +38,7 @@
   background: transparent;
   border: 0;
   z-index: 1;
+  outline: none;
 } 
 
 .positivez{
