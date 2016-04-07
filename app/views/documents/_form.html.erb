@@ -73,6 +73,31 @@ Instructions Modal
 <!--  </footer>
 </div>-->
 
+<!-- instructions modal -->
+<script type="text/javascript">
+    $(window).load(function(){
+        $('#instructionsmodal').modal('show');
+    });
+</script>
 
+<!-- Modal -->
+<div class="modal fade" id="instructionsmodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <div class="center"><%= image_tag("graylogo.jpg", width: '200', height: '75') %></div>      </div>
+      <div class="modal-body">
+        <h4>This is going to be a breeze...</h4>
+        <strong>Completing this document is as simple as clicking anywhere on the document.</strong><br>  If you're using a mobile device with a touch screen, you might have to hold your touch for a second or longer.  An input box will show up where you clicked, then just type away.  Take as many inputs as you need to complete the document.
+</br><br>
+        Once you've filled out all the important parts, <strong>click the green "Complete and Sign" button in the lower right corner.</strong> Simply sign with your mouse or touchscreen device, then carry on with your busy day!
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-success" data-dismiss="modal">Ok, got it!</button>
+      </div>
+    </div>
+  </div>
+</div>
 
 <% end %>

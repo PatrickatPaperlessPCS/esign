@@ -63,6 +63,7 @@ group :development, :test do
   gem 'spring'
   gem 'capistrano3-unicorn'
   gem 'wkhtmltopdf-binary-edge', '~> 0.12.2.1' #doesn't work on  CENTOS - must download from source
-
+  gem 'capistrano-figaro'
+  
 end
 
