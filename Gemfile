@@ -27,7 +27,6 @@ gem 'devise'
 gem 'signature-pad-rails' #signature pad for signature capture
 gem 'unicorn'
 gem 'json'
-gem 'wkhtmltopdf-binary-edge', '~> 0.12.2.1'
 #gem 'pdfkit'
 gem 'postmark-rails'
 gem 'bootstrap-sass', '~> 3.3.5'
@@ -63,5 +62,7 @@ group :development, :test do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'capistrano3-unicorn'
+  gem 'wkhtmltopdf-binary-edge', '~> 0.12.2.1' #doesn't work on  CENTOS - must download from source
+
 end
 

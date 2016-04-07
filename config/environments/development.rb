@@ -41,6 +41,9 @@ Rails.application.configure do
 
   config.blitline_callback_host = 'http://99198f3a.ngrok.io'
 
+  WickedPdf.config = {
+ exe_path: '/home/patrick/code/esign/bin/wkhtmltopdf'
+}
 
   # Sets Paperclip to use Amazon S3
   config.paperclip_defaults = {

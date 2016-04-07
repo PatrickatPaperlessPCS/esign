@@ -13,7 +13,7 @@ Devise.setup do |config|
   # note that it will be overwritten if you use your own mailer class
   # with default "from" parameter.
   config.mailer_sender = 'support@eSignHealth.com'
-
+  config.timeout_in = 15.minutes
   # Configure the class responsible to send e-mails.
   # config.mailer = 'Devise::Mailer'
     config.mailer = :postmark

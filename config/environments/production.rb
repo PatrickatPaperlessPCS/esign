@@ -81,6 +81,11 @@ Rails.application.configure do
   #config.blitline_callback_host = 'http://esign.com' # or whatever your domain will be
   config.action_mailer.default_url_options = { host: 'secure.esignhealth.com' }
 
+
+  WickedPdf.config = {  exe_path: '/usr/local/bin/wkhtmltopdf' }
+
+
+
   # Sets Paperclip to use Amazon S3
   config.paperclip_defaults = {
   :storage => :s3,
