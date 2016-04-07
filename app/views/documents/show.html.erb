@@ -6,7 +6,10 @@
     <%= wicked_pdf_javascript_include_tag "jquery.signaturepad.js" %>
     <%= wicked_pdf_javascript_include_tag "jquery.js" %>
     <%= wicked_pdf_javascript_include_tag "jquery.signaturepad.min.js" %>
-
+    <script type="text/javascript">function renderSignature(data, selector) {
+        $(selector).signaturePad({displayOnly: true}).regenerate(data);
+      }
+    </script>
   </head>
 <body class="body">
 <% @document.dynamic_textfields.each do |dt| %>
@@ -34,6 +37,7 @@
       renderSignature(<%= @document.signature.to_json.html_safe %>, 'div#signature');
     });
     </script>
+
 <% end %>
 
 </div>
