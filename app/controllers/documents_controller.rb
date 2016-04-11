@@ -6,6 +6,11 @@ class DocumentsController < ApplicationController
   # GET /documents.json
   def index
     @documents = current_user.documents.order("created_at DESC").paginate(:page => params[:page], :per_page => 15)
+
+    # if current_user.documents.count <= 1000
+    #   render "modal"
+    # end
+
   end
 
   # GET /documents/1

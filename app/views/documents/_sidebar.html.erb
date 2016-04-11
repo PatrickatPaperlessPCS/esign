@@ -37,7 +37,13 @@
                 <li><%= link_to (image_tag("edit.png", width: '15', height: '15')) + "  My Templates", templates_path %></li>
                 <li><%= link_to (image_tag("profile.png", width: '15', height: '15')) + "  Edit my Profile", edit_user_registration_path %></li>
                 <li>
-                    <%= link_to (image_tag("out.png", width: '15', height: '15')) + "Exit", destroy_user_session_path,  :method=>'delete' %>
+                <li><%= link_to (image_tag("help.png", width: '15', height: '15')) + "  Help Documentation", 'http://esignhealth.com/help', :target => '_blank' %></li>
+                <!-- Button trigger modal
+                <a data-toggle="modal" data-target="#instmodal" ><img width="15" height="15" src="assets/help.png">
+                  Help
+                </a></li> -->
+                <li>
+                    <%= link_to (image_tag("out.png", width: '15', height: '15')) + " Exit", destroy_user_session_path,  :method=>'delete' %>
                 </li>
 
             </ul>
